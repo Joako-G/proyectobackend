@@ -1,1 +1,117 @@
-<p>punto2 works!</p>
+<div class="container-fluid">
+    <div class="row contenido">
+
+        <div class="col-md-8 bg-gradient d-none d-md-block">
+            <div class="table-responsive">
+                
+                <h3 class="text-center bg-info cabecera_t">Conversion de divisas</h3>
+                
+                <table class="table">
+                   <thead>
+                       <tr>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col">
+                                <img src="assets/iconos/arg.jpg" class="icon"><br>
+                                ARS
+                            </th>
+                            <th scope="col">
+                                <img src="assets/iconos/btc.jpg" class="icon"><br>
+                                BTC</th>
+                            <th scope="col">
+                                
+                                <img src="assets/iconos/eur.jpg" class="icon"><br>
+                                EUR
+                            </th>
+                       </tr>
+                   </thead>
+                   <tbody>
+    
+                       <tr>
+                            <th scope="row">
+                                <img src="assets/iconos/usd.jpg" class="icon"><br>
+                            </th>
+                           <th>
+                                1 USD <br>Inverse
+                           </th>
+                            <td>{{converterTable1.ARS | currency:'ARS':'symbol':'1.2-2'}}        <br> {{converterTable4.USD | currency:'USD':'symbol-narrow':'1.4-4'}} </td>
+                            <td>{{converterTable1.BTC | currency:'BTC':'symbol-narrow':'1.6-6'}} <br> {{converterTable5.USD | currency:'USD':'symbol-narrow':'1.2-2'}} </td>
+                            <td>{{converterTable1.EUR | currency:'EUR':'symbol-narrow':'1.2-2'}} <br> {{converterTable6.USD | currency:'USD':'symbol-narrow':'1.2-2'}} </td>
+                       </tr>
+    
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/iconos/gbp.jpg" class="icon"><br>
+                            </th>
+                            <th>1 GBP <br>Inverse</th>
+                            <td>{{converterTable2.ARS | currency:'ARS':'symbol':'1.2-2'}}        <br> {{converterTable4.GBP | currency:'GBP':'symbol-narrow':'1.2-2'}}</td>
+                            <td>{{converterTable2.BTC | currency:'BTC':'symbol-narrow':'1.6-6'}} <br> {{converterTable5.GBP | currency:'GBP':'symbol-narrow':'1.2-2'}}</td>
+                            <td>{{converterTable2.EUR | currency:'ARS':'symbol-narrow':'1.2-2'}} <br> {{converterTable6.GBP | currency:'GBP':'symbol-narrow':'1.2-2'}}</td>
+                        </tr>
+    
+                        <tr>
+                            <th scope="row">
+                                <img src="assets/iconos/rub.jpg" class="icon"><br>
+                            </th>
+                            <th>1 RUB <br>Inverse</th>
+                            <td>{{converterTable3.ARS | currency:'ARS':'symbol':'1.2-2'}}        <br> {{converterTable4.RUB | currency:'RUB':'symbol-narrow':'1.2-2'}} </td>
+                            <td>{{converterTable3.BTC | currency:'BTC':'symbol-narrow':'1.2-2'}} <br> {{converterTable4.RUB | currency:'RUB':'symbol-narrow':'1.2-2'}}</td>
+                            <td>{{converterTable3.EUR | currency:'EUR':'symbol-narrow':'1.4-4'}} <br> {{converterTable4.RUB | currency:'RUB':'symbol-narrow':'1.2-2'}}</td>
+                        </tr>
+    
+                   </tbody>
+                </table>
+                    <br>
+            </div>
+        </div>
+    
+        <div class="col-md-4 formulario">
+    
+            <div class="row">
+                
+                <div class="col-12 cabecera">
+                    <h4 class="text-center">Conversion De Divisas</h4>
+                </div>
+    
+                <div class="col-md-12 g-3 cuerpo">
+    
+                        <h5>Cantidad</h5>
+    
+                        <input type="number" placeholder="Cantidad" class="text-end col-12 mb-2"
+                        [(ngModel)]="moneda.amount">
+    
+                        <h5>De</h5>
+
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        [(ngModel)]="moneda.from">
+                            <option *ngFor="let cod of codigos" [value]="cod" name="cod1">
+                                {{cod}}
+                            </option>
+                        </select>
+    
+                        <h5>A</h5>
+    
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        [(ngModel)]="moneda.to">
+                            <option *ngFor="let cod of codigos" [value]="cod" name="cod2">
+                                {{cod}}
+                            </option>
+                        </select>
+    
+                        <input type="number" class="text-end col-12 " disabled placeholder="{{total}}">
+    
+                        <div>
+                            <button class="btn btn-warning btn-sm col-12 btn_conv" (click)="converter()" type="button">
+                                <span>Convertir</span>
+                                <i class="bi bi-arrow-right icono_cont"></i>
+                            </button>
+                        </div>
+                       
+                </div>
+                
+            </div>
+             
+        </div>
+        
+    </div>
+</div>

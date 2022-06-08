@@ -1,0 +1,57 @@
+.contenido{
+    height: 573px;
+    width: 100%;
+}
+/*Tamaño para los iconos*/
+.icon{
+    height: 30px;
+    width: 30px;
+}
+/*Fin*/
+
+/*Diseño para las tablas*/
+.table{
+    text-align: center;
+}
+
+.cabecera_t{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+th{
+    vertical-align: middle;
+}
+/*Fin*/
+
+/*Diseño para el formulario*/
+.formulario{
+    color: white;
+    background-color: rgba(21, 21, 201, 0.842);
+}
+
+.cabecera{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10px;
+    background-color: blue;
+    border-bottom-style: solid;
+}
+
+.btn_conv{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+span{
+    font-size: 20px;
+}
+
+.icono_cont{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 25px;
+}
+/*Fin*/

@@ -13,6 +13,7 @@ import { Punto3Component } from './components/punto3/punto3.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LibroFormComponent } from './components/libro-form/libro-form.component';
+import { TransaccionFormComponent } from './components/transaccion-form/transaccion-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LibroFormComponent } from './components/libro-form/libro-form.component
     Punto3Component,
     HeaderComponent,
     FooterComponent,
-    LibroFormComponent
+    LibroFormComponent,
+    TransaccionFormComponent
   ],
   imports: [
     BrowserModule,
