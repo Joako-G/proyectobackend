@@ -1,0 +1,79 @@
+<div class="row contenido">
+    <div class="col-md-6 g-2 offset-md-3">
+        
+        <h3 class="titulo">Libros</h3>
+        <form #libroForm="ngForm">
+
+            <div class="mb-3">
+              <label for="titulo" class="form-label">Titulo</label>
+              <input type="text" class="form-control" id="titulo"
+              [(ngModel)]="libro.titulo" name="titulo" required #titulo="ngModel">
+
+              <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="alert alert-danger">
+                <div *ngIf="titulo.errors?.['required']">
+                  Debe ingresar el titulo del libro
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="descripcion"
+              [(ngModel)]="libro.descripcion" name="descripcion" #descripcion="ngModel" required >
+
+              <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)" class="alert alert-danger">
+                <div *ngIf="descripcion.errors?.['required']">
+                  Debe ingresar una descripcion del libro
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="imagen" class="form-label">URL Imagen</label>
+                <input type="text" class="form-control" id="imagen"
+                [(ngModel)]="libro.imagen" name="imagen" #imagen="ngModel" required >
+  
+                <div *ngIf="imagen.invalid && (imagen.dirty || imagen.touched)" class="alert alert-danger">
+                  <div *ngIf="imagen.errors?.['required']">
+                    Debe ingresar la URL de la portada del libro
+                  </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="stock" class="form-label">Stock</label>
+                <input type="number" class="form-control" id="stock"
+                [(ngModel)]="libro.stock" name="stock" #stock="ngModel" required >
+  
+                <div *ngIf="stock.invalid && (stock.dirty || stock.touched)" class="alert alert-danger">
+                  <div *ngIf="stock.errors?.['required']">
+                    Debe ingresar el sotck existente
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+              <label for="destacado" class="form-label">Destacado</label>
+              <select class="form-select form-select-sm" name="destacado"
+              [(ngModel)]="libro.destacado" #destacado="ngModel" required>
+                  <option selected>Eleiga categoria</option>
+                  <option *ngFor="let des of destacados" [value]="des" name="destacado">
+                    {{des}}
+                  </option>
+              </select>
+
+              <div *ngIf="destacado.invalid && (destacado.dirty || destacado.touched)" class="alert alert-danger">
+                <div *ngIf="destacado.errors?.['required']">
+                  Debe elegir si el libro es destacado
+                </div>
+              </div>
+
+            </div>
+
+
+            <button [disabled]="!libroForm.form.valid" (click)="guardarLibro()" type="submit" class="btn btn-primary">Guardar</button>
+          </form>
+    </div>
+
+</div>

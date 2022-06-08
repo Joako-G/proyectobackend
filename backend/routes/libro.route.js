@@ -10,8 +10,8 @@ const router = express.Router();
 router.get('/', libroCtrl.getLibros);
 router.post('/', libroCtrl.createLibro);
 router.get('/:destacado', libroCtrl.getLibro);
-router.put('/:id', libroCtrl.editLibro);
-router.delete('/:id', libroCtrl.deleteLibro);
+//router.put('/:id', libroCtrl.editLibro);
+//router.delete('/:id', libroCtrl.deleteLibro);
 
 //EXPORTAMOS EL MODULO DE RUTAS
 module.exports = router;

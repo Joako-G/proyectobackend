@@ -12,6 +12,7 @@ import { Punto2Component } from './components/punto2/punto2.component';
 import { Punto3Component } from './components/punto3/punto3.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LibroFormComponent } from './components/libro-form/libro-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
     Punto2Component,
     Punto3Component,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LibroFormComponent
   ],
   imports: [
     BrowserModule,
