@@ -9,8 +9,8 @@ const router = express.Router();
 //RUTAS PARA LA GESTION DE LIBRO
 router.post('/', transaccionCtrl.createTransaccion);
 router.get('/', transaccionCtrl.getTransacciones);
-router.get('/:emailCliente', transaccionCtrl.getTransaccion);
-router.get('/filtro/:monedaOrigen&:monedaDestino', transaccionCtrl.getTransaccionXod);
+//router.get('/:emailCliente', transaccionCtrl.getTransaccion);
+router.get('/:monedaOrigen&:monedaDestino', transaccionCtrl.getTransaccionXod);
 
 //EXPORTAMOS EL MODULO DE RUTAS
 module.exports = router;
