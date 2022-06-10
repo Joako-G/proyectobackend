@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LibroFormComponent } from './components/libro-form/libro-form.component';
 import { TransaccionFormComponent } from './components/transaccion-form/transaccion-form.component';
+import { PasajeFormComponent } from './components/pasaje-form/pasaje-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TransaccionFormComponent } from './components/transaccion-form/transacc
     HeaderComponent,
     FooterComponent,
     LibroFormComponent,
-    TransaccionFormComponent
+    TransaccionFormComponent,
+    PasajeFormComponent
   ],
   imports: [
     BrowserModule,

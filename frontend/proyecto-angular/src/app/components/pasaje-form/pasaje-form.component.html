@@ -1,0 +1,72 @@
+<div class="row contenido">
+  <div class="col-md-6 g-2 offset-md-3"><!--Iicio-->
+    <h3 class="titulo">Alta de Pasajes</h3>
+      <form #pasajeForm="ngForm">
+        <div class="mb-3">
+          <label for="pasajero" class="form-label">Pasajero</label>
+          <select class="form-select form-select-sm" name="pasajero"
+            [(ngModel)]="pasaje.pasajero" #dniPasajero="ngModel" required>
+              <option *ngFor="let persona of personas" [ngValue]="persona" name="nro_documento">
+                {{persona.apellido}}, {{persona.nombre}}
+              </option>
+          </select>
+          <div *ngIf="dniPasajero.invalid && (dniPasajero.dirty || dniPasajero.touched)" class="alert alert-danger">
+            <div *ngIf="dniPasajero.errors?.['required']">
+              Debe seleccionar un pasajero
+            </div>
+          </div>
+
+        </div>
+          <div class="mb-3">
+            <label for="precioPasaje" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="precioPasaje"
+              [(ngModel)]="pasaje.precioPasaje" name="precioPasaje" (ngModelChange)="change($event)"
+              #precioPasaje="ngModel" required >
+
+            <div *ngIf="precioPasaje.invalid && (precioPasaje.dirty || precioPasaje.touched)" class="alert alert-danger">
+              <div *ngIf="precioPasaje.errors?.['required']">
+                  Debe ingresar el precio del pasaje
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mb-3">
+            <label for="categoriaPasaje" class="form-label">Categoria</label>
+            <select class="form-select form-select-sm" name="categoria"
+              [(ngModel)]="pasaje.categoriaPasajero"(ngModelChange)="onChange($event)"
+              #categoria="ngModel" required>
+              <option selected>Eleiga categoria</option>
+              <option *ngFor="let categoria of categorias" [value]="categoria" name="categoria">
+                {{categoria}}
+              </option>
+            </select>
+
+            <div *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)" class="alert alert-danger">
+              <div *ngIf="categoria.errors?.['required']">
+                Debe elegir una categoria
+              </div>
+            </div>
+          </div>
+            
+          <div class="mb-3">
+            <label>Precio Total</label><br>
+            <label *ngIf="categoriaEmpty && precioEmpty">{{descuento}}</label>
+          </div>
+
+          <div class="mb-3">
+            <label for="fechaPasaje" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="fechaPasaje"
+              [(ngModel)]="pasaje.fechaCompra" name="fechaPasaje" #fechaPasaje="ngModel" required>
+
+            <div *ngIf="fechaPasaje.invalid && (fechaPasaje.dirty || fechaPasaje.touched)" class="alert alert-danger">
+              <div *ngIf="fechaPasaje.errors?.['required']">
+                Debe ingresar una fecha
+              </div>
+            </div>
+          </div>
+          <button [disabled]="!pasajeForm.form.valid" *ngIf="accion=='new'" (click)="guardarPasaje()" type="submit" class="btn btn-primary">REGISTRAR</button>
+          <button class="btn btn-primary" *ngIf="accion=='update'" (click)="actualizarPasaje()">Modificar</button>
+      </form>
+  </div><!--Fin-->
+</div>

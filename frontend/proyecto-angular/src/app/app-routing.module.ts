@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LibroFormComponent } from './components/libro-form/libro-form.component';
+import { PasajeFormComponent } from './components/pasaje-form/pasaje-form.component';
 import { Punto1Component } from './components/punto1/punto1.component';
 import { Punto2Component } from './components/punto2/punto2.component';
 import { Punto3Component } from './components/punto3/punto3.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
   {path: "punto2", component: Punto2Component},
   {path: "punto3", component: Punto3Component},
   {path: "formulario", component: LibroFormComponent},
-  {path: "formularioT", component: TransaccionFormComponent}
+  {path: "formularioT", component: TransaccionFormComponent},
+  {path: "formularioP/:id", component: PasajeFormComponent}
 ];
 
 @NgModule({

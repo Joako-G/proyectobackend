@@ -51,11 +51,16 @@ pasajeCtrl.editPasaje = async (req,res) =>{
     }
 }
 
-pasajeCtrl.getPasaje = async (req, res) =>{
+pasajeCtrl.getPasajeCategoria = async (req, res) =>{
     let categoriaPasajero = req.params.categoriaPasajero;
-    const pasaje = await Pasaje.find({'categoriaPasajero': categoriaPasajero});
+    const pasaje = await Pasaje.find({'categoriaPasajero': categoriaPasajero}).populate("pasajero");
     res.json(pasaje);
 
+}
+
+pasajeCtrl.getPasaje = async (req, res) =>{
+    const pasaje = await Pasaje.findById(req.params.id).populate("pasajero");
+    res.json(pasaje);
 }
 
 module.exports = pasajeCtrl;

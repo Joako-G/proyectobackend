@@ -11,7 +11,8 @@ router.post('/', pasajeCtrl.createPasaje);
 router.get('/', pasajeCtrl.getPasajes);
 router.delete('/:id', pasajeCtrl.deletePasaje);
 router.put('/:id', pasajeCtrl.editPasaje);
-router.get('/:categoriaPasajero', pasajeCtrl.getPasaje);
+router.get('/categoria/:categoriaPasajero', pasajeCtrl.getPasajeCategoria);
+router.get('/:id', pasajeCtrl.getPasaje);
 
 //EXPORTAMOS EL MODULO DE RUTAS
 module.exports = router;
