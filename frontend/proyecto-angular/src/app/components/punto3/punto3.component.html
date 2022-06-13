@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid contenido">
 
     <div class="row">
         <div class="col-md-6 g-2">
@@ -7,7 +7,8 @@
                 Recuperar por filtro
             </button>
             <div class="col-md-8">
-                <input type="text" [(ngModel)]="categoria" (ngModelChange)="onChange($event)">
+                <input type="text" [(ngModel)]="categoria" (ngModelChange)="onChange($event)"
+                placeholder="Ingrese categoria">
             </div>
         </div>
     </div>
@@ -38,7 +39,7 @@
                     <tr *ngFor="let pasaje of pasajes">
                         <td>{{pasaje.precioPasaje}}</td>
                         <td>{{pasaje.categoriaPasajero}}</td>
-                        <td>{{pasaje.fechaCompra}}</td>
+                        <td>{{pasaje.fechaCompra | date:'longDate'}}</td>
                         <td>{{pasaje.pasajero.apellido}}, {{pasaje.pasajero.nombre}}</td>
                         <td>
 

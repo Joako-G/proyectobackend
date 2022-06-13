@@ -10,6 +10,10 @@
     font-size: 50px;
     font-family: 'Times New Roman', Times, serif;
 }
+.text{
+    color: red;
+    font-size: 20px;
+}
 
 .cuerpo{
     display: flex;
@@ -19,6 +23,6 @@
 }
 
 img{
-    width: auto;
-    height: auto;
+    width: 620px;
+    height: 780px;
 }

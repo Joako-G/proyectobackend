@@ -16,16 +16,18 @@
               </div>
             </div>
 
-            <div class="mb-3">
-              <label for="descripcion" class="form-label">Descripción</label>
-              <input type="text" class="form-control" id="descripcion"
-              [(ngModel)]="libro.descripcion" name="descripcion" #descripcion="ngModel" required >
+            <div class="form-floating">
 
+              <textarea class="form-control" placeholder="Leave a comment here" id="descripcion"
+              [(ngModel)]="libro.descripcion" name="descripcion" #descripcion="ngModel" required></textarea>
+              <label for="floatingTextarea">Descripcion</label>
+              
               <div *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)" class="alert alert-danger">
                 <div *ngIf="descripcion.errors?.['required']">
                   Debe ingresar una descripcion del libro
                 </div>
               </div>
+
             </div>
 
             <div class="mb-3">

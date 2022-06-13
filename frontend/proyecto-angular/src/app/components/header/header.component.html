@@ -4,23 +4,36 @@
       
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['libro']">Libro</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Libros
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" [routerLink]="['libro']">Libro</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['formulario']">Nuevo Libro</a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['formulario']">Nuevo Libro</a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Divisas
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" [routerLink]="['punto2']">Conversion</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['formularioT']">Formulario Transaccion</a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['punto2']">Punto 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['formularioT']">Formulario Transaccion</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['punto3']">Punto 3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['formularioP']">Formulario Pasaje</a>
           </li>
         </ul>
       </div>

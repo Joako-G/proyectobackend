@@ -24,7 +24,6 @@ export class Punto1Component implements OnInit {
     this.obtenerLibros();
   }
   iniciar(){
-     console.log(this.libros);
      if(this.indice < this.libros.length){
        this.libro = this.libros[this.indice];
        console.log(this.libro);
