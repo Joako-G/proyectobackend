@@ -61,6 +61,7 @@ export class Punto3Component implements OnInit {
     this.pasajeService.delatePasaje(pasaje._id).subscribe(
       (result) => {
         alert(result.msg);
+        location.reload();
       },
       error => {
         alert(error.msg);

@@ -48,7 +48,7 @@ export class PasajeFormComponent implements OnInit {
       (result) => {
         Object.assign(this.pasaje,result);
         this.pasaje.pasajero = this.personas.find((item) => (item._id==this.pasaje.pasajero._id))!;
-        this.pasaje.categoriaPasajero = this.categorias.find((item) => (item.charAt(0)==this.pasaje.categoriaPasajero))!;
+        this.pasaje.categoriaPasajero = this.categorias.find((item) => (item==this.pasaje.categoriaPasajero))!;
       },
       error => {
         alert(error.msg)
@@ -93,7 +93,8 @@ export class PasajeFormComponent implements OnInit {
     this.pasaje.precioPasaje = this.descuento;
     this.pasajeService.createPasaje(this.pasaje).subscribe(
       (result) =>{
-        alert(result.msg) 
+        alert(result.msg);
+        this.router.navigate(['punto3'])
       },
       error => {
         alert(error.msg)

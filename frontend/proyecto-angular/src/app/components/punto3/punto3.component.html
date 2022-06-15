@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let pasaje of pasajes">
-                        <td>{{pasaje.precioPasaje}}</td>
+                        <td>{{'$' + pasaje.precioPasaje}}</td>
                         <td>{{pasaje.categoriaPasajero}}</td>
                         <td>{{pasaje.fechaCompra | date:'longDate'}}</td>
                         <td>{{pasaje.pasajero.apellido}}, {{pasaje.pasajero.nombre}}</td>
