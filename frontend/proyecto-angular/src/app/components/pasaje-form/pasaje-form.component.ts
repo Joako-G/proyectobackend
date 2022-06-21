@@ -103,6 +103,7 @@ export class PasajeFormComponent implements OnInit {
   }
 
   actualizarPasaje(){
+    this.pasaje.precioPasaje = this.descuento;
     this.pasajeService.updatePasaje(this.pasaje._id,this.pasaje).subscribe(
       (result) =>{
         alert("Pasaja Updated");
