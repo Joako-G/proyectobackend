@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Transaccion } from 'src/app/models/transaccion';
+import { ConverterService } from 'src/app/services/converter.service';
 import { TransaccionService } from 'src/app/services/transaccion.service';
 
 @Component({
@@ -12,16 +13,28 @@ export class TransaccionFormComponent implements OnInit {
   transaccion!: Transaccion;
   transacciones!: Array<Transaccion>;
 
+  codigos!: Array<string>;
   monedaOrigen!: string;
   monedaDestino!: string;
   filtro1: boolean = false;
   filtro2: boolean = false;
 
-  constructor(private transaccionService: TransaccionService) {
-    //this.obtenerTransaccionesFiltro();
+  constructor(private transaccionService: TransaccionService,
+              private converterService: ConverterService) {
+                this.getLista();
+                this.obtenerTransacciones();
   }
 
   ngOnInit(): void {
+  }
+
+  //METODO QUE RETORNA LISTA DE CODIGOS DE MONEDAS DE LOS PAISES
+  getLista(){
+    this.codigos = new Array<string>();
+    this.converterService.getListCodigos().subscribe((result) =>{
+      this.codigos = result;
+      //console.log(result)
+    })
   }
 
   obtenerTransacciones(){

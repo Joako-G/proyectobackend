@@ -12,14 +12,14 @@ import { PersonaService } from 'src/app/services/persona.service';
 export class Punto3Component implements OnInit {
 
   pasajes!: Array<Pasaje>;
+  categorias: Array<string> = ['Menor','Adulto','Jubilado'];
   categoria!:string;
   filtro: boolean = false;
 
   constructor(private pasajeService: PasajeService,
               private personaService: PersonaService,
               private router: Router) {
-    //this.obtenerPasajes();
-    //this.listaPersonas();
+              this.obtenerPasajes();
   }
 
   ngOnInit(): void {
@@ -30,21 +30,9 @@ export class Punto3Component implements OnInit {
       (result) =>{
         this.pasajes = new Array<Pasaje>();
         this.pasajes = result;
-        console.log(this.pasajes);
       },
       error => {
         alert(error.msg);
-      }
-    )
-  }
-
-  listaPersonas(){
-    this.personaService.getPersonas().subscribe(
-      (result) => {
-        console.log(result);
-      },
-      error => {
-        alert(error.msg)
       }
     )
   }
@@ -67,7 +55,6 @@ export class Punto3Component implements OnInit {
         alert(error.msg);
       }
     )
-    console.log(pasaje);
   }
 
   obtenerPasajeFiltro(){
@@ -77,7 +64,6 @@ export class Punto3Component implements OnInit {
         this.pasajes = result;
         this.filtro = false;
         this.categoria = "";
-        console.log(this.pasajes)
       },
       error => {
         alert(error.msg);

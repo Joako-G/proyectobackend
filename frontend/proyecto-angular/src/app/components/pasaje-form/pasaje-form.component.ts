@@ -26,7 +26,6 @@ export class PasajeFormComponent implements OnInit {
               private activatedRouter: ActivatedRoute,
               private router: Router) {
                 this.pasaje = new Pasaje();
-                this.listaPersona();
                 this.persona = new Persona();
 
   }
@@ -48,7 +47,7 @@ export class PasajeFormComponent implements OnInit {
       (result) => {
         Object.assign(this.pasaje,result);
         this.pasaje.pasajero = this.personas.find((item) => (item._id==this.pasaje.pasajero._id))!;
-        this.pasaje.categoriaPasajero = this.categorias.find((item) => (item==this.pasaje.categoriaPasajero))!;
+        //this.pasaje.categoriaPasajero = this.categorias.find((item) => (item==this.pasaje.categoriaPasajero))!;
       },
       error => {
         alert(error.msg)

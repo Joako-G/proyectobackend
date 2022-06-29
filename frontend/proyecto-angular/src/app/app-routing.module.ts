@@ -9,9 +9,9 @@ import { TransaccionFormComponent } from './components/transaccion-form/transacc
 
 const routes: Routes = [
   {path: "libro", component: Punto1Component},
-  {path: "punto2", component: Punto2Component},
-  {path: "punto3", component: Punto3Component},
-  {path: "formulario", component: LibroFormComponent},
+  {path: "divisa", component: Punto2Component},
+  {path: "pasaje", component: Punto3Component},
+  {path: "formularioL", component: LibroFormComponent},
   {path: "formularioT", component: TransaccionFormComponent},
   {path: "formularioP/:id", component: PasajeFormComponent}
 ];

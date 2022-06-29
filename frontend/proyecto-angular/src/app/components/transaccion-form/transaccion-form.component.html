@@ -1,17 +1,42 @@
 <div class="container-fluid contenido">
 
     <div class="row">
-        <div class="col-md-6 g-2">
-            <button class="btn btn-primary" (click)="obtenerTransaccionesFiltro()" 
+      
+        <div class="col-md-8 g-2">
+
+          <button class="btn btn-primary my-3" (click)="obtenerTransaccionesFiltro()" 
             *ngIf="filtro1&&filtro2">
                 Recuperar por filtro
             </button>
-            <div class="col-md-8">
-                <input type="text" [(ngModel)]="monedaOrigen"  (ngModelChange)="onChange($event)"
-                placeholder="Moneda Origen">
-                <input type="text" [(ngModel)]="monedaDestino" (ngModelChange)="onChange2($event)" 
-                placeholder="Moneda Destino">
+
+            <div class="row">
+              <div class="col-md-2">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                [(ngModel)]="monedaOrigen" (ngModelChange)="onChange($event)">
+                  <option *ngFor="let cod of codigos" [value]="cod" name="cod1">
+                    {{cod}}
+                  </option>
+                </select>
+              </div>
+              
+                <div class="col-md-2">
+                  <select class="form-select mb-3" aria-label=""
+                    [(ngModel)]="monedaDestino" (ngModelChange)="onChange2($event)">
+                    <option *ngFor="let cod of codigos" [value]="cod" name="cod2">
+                      {{cod}}
+                    </option>
+                  </select>
+                </div>
             </div>
+         
+            
+            
+            
+         
+          
+          
+    
+          
         </div>
     </div>
     

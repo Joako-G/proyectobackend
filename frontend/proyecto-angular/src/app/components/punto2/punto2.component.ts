@@ -44,17 +44,9 @@ export class Punto2Component implements OnInit {
 
 //METODO QUE HACE LA CONVERSION DE LA MONEDA
   converter(){
-    /*this.converterService.getCoverter(this.moneda.amount,this.moneda.from,this.moneda.to).subscribe(
-      (result) => {
-        this.moneda = result;
-        console.log(result)
-        console.log(this.moneda);
-      }
-    )*/
     this.converterService.convertMoney(this.moneda.from,this.moneda.to,this.moneda.amount).subscribe(
       (result) => {
         this.total = result.result;
-        //this.moneda = result;
         this.transaccion = new Transaccion();
         this.transaccion.monedaOrigen = this.moneda.from;
         this.transaccion.cantidadOrigen = this.moneda.amount;

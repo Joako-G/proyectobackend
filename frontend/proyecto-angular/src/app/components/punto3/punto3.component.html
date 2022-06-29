@@ -2,23 +2,31 @@
 
     <div class="row">
         <div class="col-md-6 g-2">
-            <button class="btn btn-primary" *ngIf="filtro"
+            <button class="btn btn-primary mb-2 btn_filtro" *ngIf="filtro"
                 (click)="obtenerPasajeFiltro()">
                 Recuperar por filtro
             </button>
-            <div class="col-md-8">
-                <input type="text" [(ngModel)]="categoria" (ngModelChange)="onChange($event)"
-                placeholder="Ingrese categoria">
+            <div class="mb-3 col-md-3">
+                <select class="form-select form-select-sm" name="categoria" aria-placeholder="Seleccione catedoria"
+                [(ngModel)]="categoria"(ngModelChange)="onChange($event)">
+                    <option selected>Eleiga categoria</option>
+                    <option *ngFor="let categoria of categorias" [value]="categoria" name="categoria">
+                        {{categoria}}
+                    </option>
+                </select>
+                
             </div>
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-4 g-4">
-            <button class="btn btn-primary" (click)="obtenerPasajes()">
+            <button class="btn btn-primary my-2 btn_filtro" (click)="obtenerPasajes()">
                 Recuperar todo
             </button>
-            <button class="btn btn-primary offset-1" (click)="nuevoPasaje()">Nuevo Pasaje</button>
+            <button class="btn btn-primary btn_filtro" (click)="nuevoPasaje()">
+                Nuevo Pasaje
+            </button>
         </div>
     </div>
 
@@ -43,11 +51,11 @@
                         <td>{{pasaje.pasajero.apellido}}, {{pasaje.pasajero.nombre}}</td>
                         <td>
 
-                            <button class="btn btn-primary" (click)="editarPasaje(pasaje)">
+                            <button class="btn btn-primary my-2 btn_accion" (click)="editarPasaje(pasaje)">
                                 Editar
                             </button>
 
-                            <button class="btn btn-danger" (click)="eliminarPasaje(pasaje)">
+                            <button class="btn btn-danger btn_accion" (click)="eliminarPasaje(pasaje)">
                                 Eliminar
                             </button>
 

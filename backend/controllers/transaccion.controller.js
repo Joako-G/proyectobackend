@@ -31,7 +31,7 @@ transaccionCtrl.getTransaccion = async (req, res) => {
 transaccionCtrl.getTransaccionXod = async (req, res) =>{
     let monedaOrigen = req.params.monedaOrigen;
     let monedaDestino = req.params.monedaDestino;
-    const transaccion = await Transaccion.find({$or:[{'monedaOrigen': monedaOrigen},{'monedaDestino': monedaDestino}]});
+    const transaccion = await Transaccion.find({$and:[{'monedaOrigen': monedaOrigen},{'monedaDestino': monedaDestino}]});
     res.json(transaccion);
 }
 

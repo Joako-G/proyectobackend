@@ -1,4 +1,13 @@
 .contenido{
-    height: 480px;
+    height: 800px;
     width: 100%;
+}
+
+.btn_filtro{
+    margin-right:10px ;
+    width: 200px;
+}
+
+.btn_accion{
+    margin-right:10px;
 }

@@ -1,4 +1,13 @@
+body{
+    font-size: 15px;
+}
 .contenido{
-    height: 480px;
+    height: auto;
     width: 100%;
+}
+
+select{
+    width: 100px;
+    height: 45px;
+   
 }
