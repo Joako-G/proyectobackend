@@ -56,17 +56,16 @@
 
 
             <div class="mb-3">
-              <label for="destacado" class="form-label">Destacado</label>
-              <select class="form-select form-select-sm" name="destacado"
-              [(ngModel)]="libro.destacado" #destacado="ngModel" required>
-                  <option selected>Eleiga categoria</option>
-                  <option *ngFor="let des of destacados" [value]="des" name="destacado">
-                    {{des}}
-                  </option>
-              </select>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="destacado" id="destacado"
+                [(ngModel)]="libro.destacado" value="true" required #esdestacado="ngModel">
+                <label class="form-check-label" for="destacado">
+                  Destacado
+                </label>
+              </div>
 
-              <div *ngIf="destacado.invalid && (destacado.dirty || destacado.touched)" class="alert alert-danger">
-                <div *ngIf="destacado.errors?.['required']">
+              <div *ngIf="esdestacado.invalid && (esdestacado.dirty || esdestacado.touched)" class="alert alert-danger">
+                <div *ngIf="esdestacado.errors?.['required']">
                   Debe elegir si el libro es destacado
                 </div>
               </div>

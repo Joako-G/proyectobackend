@@ -5,5 +5,5 @@ export class Libro {
     descripcion!: string;
     imagen!: string;
     stock!: number;
-    destacado!: boolean;
+    destacado: boolean = false;
 }
